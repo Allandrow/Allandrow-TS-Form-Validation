@@ -2,6 +2,10 @@
 
 Simple client side form validation. Check required, length, email and password match
 
+## Live Demo
+
+[Github Page](https://allandrow.github.io/TS-Form-Validation/)
+
 ## Project Specifications
 
 - Create form UI
