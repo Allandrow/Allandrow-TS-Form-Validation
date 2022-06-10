@@ -1,0 +1,22 @@
+{
+  "name": "ts-form-validation",
+  "version": "1.0.0",
+  "description": "Simple client side form validation. Check required, length, email and password match.",
+  "main": "app.js",
+  "scripts": {
+    "tsc": "tsc app.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Allandrow/TS-Form-Validation.git"
+  },
+  "author": "Cyril Tiger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Allandrow/TS-Form-Validation/issues"
+  },
+  "homepage": "https://github.com/Allandrow/TS-Form-Validation#readme",
+  "devDependencies": {
+    "typescript": "^4.7.3"
+  }
+}

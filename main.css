@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: hsl(0, 0%, 7%);
+  --bg-color: hsl(0, 0%, 96%);
+  --shadow-color: rgba(33, 33, 33, 0.2);
+  --primary-color: hsl(204, 70%, 53%);
+  --error-color: hsl(354, 70%, 54%);
+  --success-color: hsl(137, 34%, 51%);
+  --radius: 0.25rem;
+  --gradient: linear-gradient(
+    180deg,
+    rgba(220, 56, 72, 1) 0%,
+    rgba(51, 152, 219, 1) 25%,
+    rgba(51, 152, 219, 1) 75%,
+    rgba(88, 173, 112, 1) 100%
+  );
+}
+
+:focus {
+  outline: 0;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 2rem 0;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Raleway', sans-serif;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid hsl(0, 0%, 80%);
+  box-shadow: 0 0 11px var(--shadow-color);
+  background: var(--bg-color);
+  padding: 2rem;
+  gap: 1.5rem;
+  max-width: 400px;
+}
+
+h1 {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+span {
+  font-size: 1rem;
+  color: hsl(0, 0%, 47%);
+}
+
+div {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 3rem;
+}
+
+div::before {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 50px;
+  width: 0;
+  background: transparent;
+  left: -3px;
+  top: 0;
+  border-radius: var(--radius);
+  transition: width 250ms;
+}
+
+div.error::before {
+  width: 10px;
+  background: var(--error-color);
+}
+
+div::after {
+  content: attr(data-error);
+  position: absolute;
+  top: 55px;
+  font-size: 0.75rem;
+  display: block;
+  color: var(--error-color);
+  opacity: 0;
+  transition: opacity 250ms;
+}
+
+div.error::after {
+  opacity: 1;
+}
+
+div.active::before {
+  width: 10px;
+  background: var(--primary-color);
+}
+
+div.success::before {
+  width: 10px;
+  background: var(--success-color);
+}
+
+input {
+  background: hsl(0, 0%, 93%);
+  width: 100%;
+  border: 1px solid hsl(0, 0%, 80%);
+  padding: 0.75rem;
+  padding-left: 1rem;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  height: 50px;
+}
+
+input::placeholder {
+  color: hsl(0, 0%, 47%);
+}
+
+.error input {
+  border-color: var(--error-color);
+}
+
+.active input {
+  border-color: var(--primary-color);
+}
+
+.success input {
+  border-color: var(--success-color);
+}
+
+button {
+  background: var(--gradient);
+  background-size: 100% 1000px;
+  border: 0;
+  padding: 0.75rem;
+  color: white;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  cursor: pointer;
+  background-position: center;
+  transition: background-position 300ms;
+}
+
+button.success {
+  background-position: bottom;
+}
+
+button.error {
+  background-position: top;
+}
+
+button:active {
+  box-shadow: 0 0 5px var(--primary-color);
+}
+
+@media screen and (min-width: 400px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  section {
+    width: 400px;
+    margin: 0 auto;
+  }
+}

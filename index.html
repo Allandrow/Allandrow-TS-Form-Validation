@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="favicon.ico" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <script src="app.js" defer></script>
+    <title>Form Validator</title>
+  </head>
+  <body>
+    <section>
+      <h1>Register With Us</h1>
+      <form novalidate>
+        <label>
+          <span>Username</span>
+          <div data-error="">
+            <input
+              id="username"
+              class="focusable"
+              type="text"
+              placeholder="Enter username"
+            />
+          </div>
+        </label>
+        <label>
+          <span>Email</span>
+          <div data-error="">
+            <input
+              id="email"
+              class="focusable"
+              type="email"
+              placeholder="Enter email"
+            />
+          </div>
+        </label>
+        <label>
+          <span>Password</span>
+          <div data-error="">
+            <input
+              id="password"
+              class="focusable"
+              type="password"
+              placeholder="Enter password"
+            />
+          </div>
+        </label>
+        <label>
+          <span>Confirm Password</span>
+          <div data-error="">
+            <input
+              id="confirmation"
+              class="focusable"
+              type="password"
+              placeholder="Enter password again"
+            />
+          </div>
+        </label>
+        <button id="submit" class="focusable">Submit</button>
+      </form>
+    </section>
+  </body>
+</html>
